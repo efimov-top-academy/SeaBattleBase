@@ -12,28 +12,45 @@ namespace SeaBattleBase.GamePlatforms.ConsolePlatform
     {
         public void Setup(Player playerHuman)
         {
+            WindowDrawConsole.Clear();
             Console.WriteLine("Setup game");
-            BoxView();
+
+            WindowDrawConsole.Window("Name", 20, 5);
+            string name = WindowDrawConsole.TextBoxName(20);
+
+
+            WindowDrawConsole.Clear();
+
+            int width = Resource.SizeCell * Resource.SizeField * 2 * 2 + 8 * Resource.SizeCell;
+            int height = Resource.SizeField * Resource.SizeCell + Resource.SizeCell * 3;
+
+            WindowDrawConsole.Window($"Setup Flotilla | Player {name}", width, height);
+
+            int rowStart = Resource.RowTop + Resource.SizeCell + 1;
+            int columnStart = Resource.ColumnLeft + Resource.SizeCell * 2;
+            WindowDrawConsole.Field(rowStart, columnStart);
+
+            columnStart += Resource.SizeCell * 2 * Resource.SizeField + Resource.SizeCell * 2 * 2;
         }
 
         public void ViewGame(List<Player> players)
         {
+            WindowDrawConsole.Clear();
+
             Console.WriteLine("View game");
+            int width = Resource.SizeCell * Resource.SizeField * 2 * 2 + 8 * Resource.SizeCell;
+            int height = Resource.SizeField * Resource.SizeCell + Resource.SizeCell * 2;
+
+            WindowDrawConsole.Window("Setup Flotilla", width, height);
+
+            int rowStart = Resource.RowTop + Resource.SizeCell;
+            int columnStart = Resource.ColumnLeft + Resource.SizeCell * 2;
+            WindowDrawConsole.Field(rowStart, columnStart);
+
+            columnStart += Resource.SizeCell * 2 * Resource.SizeField + Resource.SizeCell * 2 * 2;
+            WindowDrawConsole.Field(rowStart, columnStart);
         }
 
-        void BoxView()
-        {
-            int width = Resource.SizeCell * 2 * 4 + Resource.SizeCell * 2 * Resource.SizeField;
-            int height = Resource.SizeCell * 2 * 2 + Resource.SizeField * Resource.SizeCell;
-            
-            // border
-            for(int row = 0; row < height; row++)
-            {
-                Console.SetCursorPosition(0, row);
-                Console.BackgroundColor = Resource.ColorBorder;
-                Console.Write("X");
-            }
-                
-        }
+        
     }
 }

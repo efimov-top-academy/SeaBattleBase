@@ -1,5 +1,6 @@
 ﻿using SeaBattleBase.GamePlatforms;
 using SeaBattleBase.GamePlatforms.ConsolePlatform;
+using Terminal.Gui;
 
 namespace SeaBattleBase
 {
@@ -13,9 +14,14 @@ namespace SeaBattleBase
             Game game = new Game(platformConsole);
 
             game.SetupPlayers();
-            game.View();
+
+
+            Console.ReadKey();
+            //game.View();
 
             //game.Process();
+
+            
         }
     }
 }

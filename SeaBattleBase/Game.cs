@@ -37,8 +37,8 @@ namespace SeaBattleBase
         {
             //foreach(Player player in players)
             platform.Viewer.Setup(players[0]);
-            foreach (Player player in players)
-                player.SetFlotiila();
+            //foreach (Player player in players)
+            //    player.SetFlotiila();
         }
         public void View()
         {

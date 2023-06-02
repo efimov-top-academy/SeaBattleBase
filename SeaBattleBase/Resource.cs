@@ -10,11 +10,16 @@ namespace SeaBattleBase
     public static class Resource
     {
         public static int SizeField { get; set; } = 10;
-        public static int SizeCell { set; get; } = 1;
-        public static int RowStart { get; set; } = 3;
-        public static int ColumnStart { get; set; } = 5;
+        public static int SizeCell { set; get; } = 2;
+        public static int RowTop { get; set; } = 3;
+        public static int ColumnLeft { get; set; } = 5;
 
-        public static ConsoleColor ColorFill { get; set; } = ConsoleColor.Blue;
+        public static ConsoleColor ColorFill { get; set; } = ConsoleColor.Gray;
         public static ConsoleColor ColorBorder { get; set; } = ConsoleColor.DarkBlue;
+        public static ConsoleColor ColorText { get; set; } = ConsoleColor.Black;
+        public static ConsoleColor ColorWater { get; set; } = ConsoleColor.DarkBlue;
+        public static ConsoleColor ColorDesk { get; set; } = ConsoleColor.DarkMagenta;
+        public static ConsoleColor ColorWaterShot { get; set; } = ConsoleColor.Red;
+        public static ConsoleColor ColorDeskShot { get; set; } = ConsoleColor.DarkRed;
     }
 }
