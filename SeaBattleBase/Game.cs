@@ -1,5 +1,4 @@
 ﻿using SeaBattleBase.Players;
-using SeaBattleBase.GamePlatforms;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,55 +16,34 @@ namespace SeaBattleBase
     }
     public class Game
     {
-        List<Player> players = new List<Player>();
-        bool playerCurrent;
-        GamePlatform platform = null!;
+        public List<Player> Players { set; get; } = new List<Player>();
+        public bool PlayerCurrent { set; get; }
 
-        public Game(GamePlatform platform)
+        public Game()
         {
-            this.platform = platform;
-            HumanPlayer humanPlayer = new HumanPlayer(platform.Commander, platform.Shooter);
-            //HumanPlayer humanPlayer = new HumanPlayer();
-            //humanPlayer.Shooter = platform.Shooter;
-            //humanPlayer.Commander = platform.Commander;
-
-            players.Add(humanPlayer);
-            players.Add(new ComputerPlayer());
+            Players.Add(new Player());
+            Players.Add(new Player());
         }
 
-        public void SetupPlayers()
-        {
-            //foreach(Player player in players)
-            platform.Viewer.Setup(players[0]);
-            //foreach (Player player in players)
-            //    player.SetFlotiila();
-        }
-        public void View()
-        {
-            platform.Viewer.ViewGame(players);
-        }
-
-        public void Process()
+        public bool Step(Point pointShot)
         {
             HitType hit;
 
-            while (true)
-            {
-                View();
-                Point pointShot = players[playerCurrent.ToInt()].SetShot();
-                hit = players[(!playerCurrent).ToInt()].GetShot(pointShot);
+            //Point pointShot = Players[PlayerCurrent.ToInt()].SetShot();
+            hit = Players[(!PlayerCurrent).ToInt()].GetShot(pointShot);
 
-                // Destroy
-                if (hit == HitType.Destroy)
-                    if (players[(!playerCurrent).ToInt()].FlotillaSize == 0)
-                        break;
+            // Destroy
+            if (hit == HitType.Destroy)
+                if (Players[(!PlayerCurrent).ToInt()].FlotillaSize == 0)
+                    return false;
 
-                // Wound
+            // Wound
 
-                // Beside
-                if (hit == HitType.Beside)
-                    playerCurrent = !playerCurrent;
-            }
+            // Beside
+            if (hit == HitType.Beside)
+                PlayerCurrent = !PlayerCurrent;
+
+            return true;
 
         }
 

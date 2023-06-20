@@ -7,6 +7,7 @@ using SeaBattleBase;
 
 namespace SeaBattleBase.Players
 {
+    /*
     public class ComputerPlayer : Player
     {
         Random random = new Random();
@@ -35,4 +36,6 @@ namespace SeaBattleBase.Players
             return new Point(random.Next(0, 9), random.Next(0, 9));
         }
     }
+    */
 }
+

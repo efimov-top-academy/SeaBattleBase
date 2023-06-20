@@ -9,6 +9,6 @@ namespace SeaBattleBase.GamePlatforms
 {
     public interface ISetFlotilla
     {
-        List<Ship> SetShips();
+        List<Ship> SetShips(string name);
     }
 }

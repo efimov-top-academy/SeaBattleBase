@@ -10,27 +10,12 @@ namespace SeaBattleBase.GamePlatforms.ConsolePlatform
 {
     public class GameViewConsole : IGameView
     {
-        public void Setup(Player playerHuman)
+        public string Setup()
         {
             WindowDrawConsole.Clear();
             Console.WriteLine("Setup game");
-
             WindowDrawConsole.Window("Name", 20, 5);
-            string name = WindowDrawConsole.TextBoxName(20);
-
-
-            WindowDrawConsole.Clear();
-
-            int width = Resource.SizeCell * Resource.SizeField * 2 * 2 + 8 * Resource.SizeCell;
-            int height = Resource.SizeField * Resource.SizeCell + Resource.SizeCell * 3;
-
-            WindowDrawConsole.Window($"Setup Flotilla | Player {name}", width, height);
-
-            int rowStart = Resource.RowTop + Resource.SizeCell + 1;
-            int columnStart = Resource.ColumnLeft + Resource.SizeCell * 2;
-            WindowDrawConsole.Field(rowStart, columnStart);
-
-            columnStart += Resource.SizeCell * 2 * Resource.SizeField + Resource.SizeCell * 2 * 2;
+            return WindowDrawConsole.TextBoxName(20);
         }
 
         public void ViewGame(List<Player> players)
@@ -51,6 +36,7 @@ namespace SeaBattleBase.GamePlatforms.ConsolePlatform
             WindowDrawConsole.Field(rowStart, columnStart);
         }
 
+        
         
     }
 }

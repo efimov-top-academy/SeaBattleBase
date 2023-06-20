@@ -8,20 +8,21 @@ namespace SeaBattleBase
     {
         static void Main(string[] args)
         {
-            GamePlatform platformConsole = new GamePlatform(new GameViewConsole(),
-                                                            new SetFlotillaConsole(),
-                                                            new SetShotConsole());
-            Game game = new Game(platformConsole);
+            //GamePlatform platformConsole = new GamePlatform(new GameViewConsole(),
+            //                                                new SetFlotillaConsole(),
+            //                                                new SetShotConsole());
+            //Game game = new Game(platformConsole);
 
-            game.SetupPlayers();
+            //game.SetupPlayers();
+            //game.SetupFlottilas();
 
-
-            Console.ReadKey();
+            //Console.ReadKey();
             //game.View();
 
             //game.Process();
-
-            
+            GameApplicationConsole gameApplicationConsole = new GameApplicationConsole();
+            gameApplicationConsole.Execute();
         }
+            
     }
 }

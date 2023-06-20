@@ -7,11 +7,12 @@ using System.Threading.Tasks;
 
 namespace SeaBattleBase.Players
 {
+    /*
     public class HumanPlayer : Player
     {
         public ISetFlotilla Commander { get; set; } = null!;
         public ISetShot Shooter { get; set; } = null!;
-        public HumanPlayer()
+        public HumanPlayer(string name) : base(name)
         {
         }
         public HumanPlayer(ISetFlotilla commander, ISetShot shooter)
@@ -22,8 +23,8 @@ namespace SeaBattleBase.Players
 
         public override void SetFlotiila()
         {
-            Flotilla = Commander.SetShips();
-            Field.SetFlotilla(Flotilla);
+            this.Flotilla = Commander.SetShips(this.Name);
+            Field.SetFlotilla(this.Flotilla);
         }
 
         public override Point SetShot()
@@ -31,4 +32,5 @@ namespace SeaBattleBase.Players
             return Shooter.SetShot();
         }
     }
+    */
 }

@@ -10,7 +10,7 @@ namespace SeaBattleBase.GamePlatforms
 {
     public interface IGameView
     {
-        void Setup(Player playerHuman);
+        string Setup();
 	    void ViewGame(List<Player> players);
     }
 }

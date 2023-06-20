@@ -19,6 +19,9 @@ namespace SeaBattleBase
         public static ConsoleColor ColorText { get; set; } = ConsoleColor.Black;
         public static ConsoleColor ColorWater { get; set; } = ConsoleColor.DarkBlue;
         public static ConsoleColor ColorDesk { get; set; } = ConsoleColor.DarkMagenta;
+        public static ConsoleColor ColorDeskEmpty { get; set; } = ConsoleColor.White;
+        public static ConsoleColor ColorDeskSelect { get; set; } = ConsoleColor.DarkGreen;
+
         public static ConsoleColor ColorWaterShot { get; set; } = ConsoleColor.Red;
         public static ConsoleColor ColorDeskShot { get; set; } = ConsoleColor.DarkRed;
     }
