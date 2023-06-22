@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace SeaBattleBase.Players
 {
-    delegate Point SetShot();
-    delegate void SetFlotilla();
+    public delegate Point SetShot();
+    public delegate void SetFlotilla();
     /*
     public abstract class Player
     {
@@ -67,8 +67,8 @@ namespace SeaBattleBase.Players
         public List<Ship> Flotilla { get; set; } = new List<Ship>();
         public Player(string name) => Name = name;
         public Player() : base() { Name = "Computer"; }
-        SetFlotilla Commander { get; set; }
-        SetShot Shooter { get; set; }
+        public SetFlotilla Commander { get; set; }
+        public SetShot Shooter { get; set; }
 
         public HitType GetShot(Point point)
         {
